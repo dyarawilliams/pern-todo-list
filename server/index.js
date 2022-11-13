@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const pool = require("./db");
 
 // Use .env file in config folder
-// require("dotenv").config();
+require("dotenv").config({ path: "./config/.env" });
+
+const pool = require("./db");
 
 // Middleware 
 app.use(cors());
@@ -87,6 +88,6 @@ app.delete("/todos/:id", async (req, res) => {
     }
 })
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Server is listening on PORT 5000")
 });
