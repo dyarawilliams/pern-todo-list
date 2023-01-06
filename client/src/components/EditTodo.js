@@ -61,7 +61,7 @@ const EditTodo = ({ todo }) => {
                                 data-bs-dismiss="modal"
                                 onClick={(e) => updateDescription(e)}
                             >
-                                Edit
+                                Save Edit
                             </button>
                             <button
                                 type="button"
